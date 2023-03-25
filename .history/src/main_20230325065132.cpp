@@ -59,7 +59,7 @@ typedef struct {
 
 std::map<String, deviceConfig_t> devices = {
   //{deviceId, {relayPIN,  flipSwitchPIN}}
-  {"641d39cd0f750d41bd147fd1", {  RELAYPIN_1, SWITCHPIN_1}}
+  {"SWITCH_ID_NO_!1_HERE", {  RELAYPIN_1, SWITCHPIN_1}}
 };
 
 typedef struct {
@@ -161,7 +161,6 @@ void setupSinricPro()
 
   //SinricPro.restoreDeviceStates(true); // Uncomment to restore the last known state from the server.
   SinricPro.begin(APP_KEY, APP_SECRET);  
-  Serial.println("end setup SinricPro function");
 }
 
 AsyncWebServer server(80);
@@ -186,9 +185,6 @@ void setup()
 
 void loop()
 {
-  Serial.println("loop");
   SinricPro.handle();
-  Serial.println("SinricPro");
   handleFlipSwitches();
-  Serial.println("HandleFlipSwitches");
 }

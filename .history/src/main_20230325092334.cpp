@@ -161,7 +161,6 @@ void setupSinricPro()
 
   //SinricPro.restoreDeviceStates(true); // Uncomment to restore the last known state from the server.
   SinricPro.begin(APP_KEY, APP_SECRET);  
-  Serial.println("end setup SinricPro function");
 }
 
 AsyncWebServer server(80);
@@ -186,9 +185,7 @@ void setup()
 
 void loop()
 {
-  Serial.println("loop");
+  Serial.printpln(;)
   SinricPro.handle();
-  Serial.println("SinricPro");
   handleFlipSwitches();
-  Serial.println("HandleFlipSwitches");
 }
